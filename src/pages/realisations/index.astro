@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const galleryItems = [
+  { id: 1, src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80', alt: 'Rénovation complète villa Montpellier — cuisine ouverte moderne', caption: 'Villa Montpellier — Rénovation complète', href: '/realisations/projet-maison-montpellier' },
+  { id: 2, src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80', alt: 'Cuisine design sur mesure avec îlot central à Béziers', caption: 'Cuisine design — Béziers', href: '/realisations/cuisine-beziers' },
+  { id: 3, src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80', alt: 'Salle de bain spa avec douche italienne et baignoire îlot à Sète', caption: 'Salle de bain spa — Sète', href: '/realisations/salle-de-bain-sete' },
+  { id: 4, src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80', alt: 'Extension ossature bois avec toit terrasse à Lattes', caption: 'Extension bois — Lattes', href: '/realisations/extension-lattes' },
+  { id: 5, src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80', alt: 'Terrasse carrelée et piscine coque autour d\'une villa à Agde', caption: 'Terrasse & piscine — Agde', href: '/realisations/terrasse-agde' },
+  { id: 6, src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', alt: 'Salon rénové avec parquet chêne et luminaires design', caption: 'Rénovation salon — Montpellier', href: '/realisations/projet-maison-montpellier' },
+  { id: 7, src: 'https://images.unsplash.com/photo-1583845112203-29329902332e?w=800&q=80', alt: 'Salle de bain carreaux de ciment et vasque à poser', caption: 'Salle de bain carreaux ciment — Lunel', href: '/realisations/salle-de-bain-sete' },
+  { id: 8, src: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80', alt: 'Séjour contemporain avec palette de couleurs terracotta et bois', caption: 'Décoration intérieure — Pézenas', href: '/realisations/projet-maison-montpellier' },
+  { id: 9, src: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800&q=80', alt: 'Cuisine blanche avec plan de travail bois et crédence carrelage métro', caption: 'Cuisine classique — Frontignan', href: '/realisations/cuisine-beziers' },
+  { id: 10, src: 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&q=80', alt: 'Terrasse bois composite avec pergola bioclimatique', caption: 'Pergola & terrasse — Mèze', href: '/realisations/terrasse-agde' },
+  { id: 11, src: 'https://images.unsplash.com/photo-1600210491892-03d54741b62c?w=800&q=80', alt: 'Chambre parentale rénovée avec dressing sur mesure et tête de lit intégrée', caption: 'Suite parentale — Agde', href: '/realisations/projet-maison-montpellier' },
+  { id: 12, src: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&q=80', alt: 'Bureau home office aménagé avec rangements intégrés et éclairage LED', caption: 'Aménagement bureau — Palavas', href: '/realisations/extension-lattes' },
+];
+---
+
+<Layout
+  title="Réalisations Rénovation Hérault — Portfolio Atelier Roc"
+  description="Découvrez notre galerie de réalisations : rénovations complètes, cuisines, salles de bain, extensions et terrasses dans l'Hérault. Artisans Atelier Roc."
+  image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=90"
+>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=90');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="label">Portfolio</p>
+      <h1>Nos réalisations</h1>
+      <p>Des projets uniques, réalisés avec soin dans toute l'Hérault</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="container">
+      <a href="/">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Réalisations</span>
+    </div>
+  </nav>
+
+  <!-- Gallery Section -->
+  <section class="content-section">
+    <div class="section-header fade-up">
+      <p class="label">Nos projets</p>
+      <h2>Portfolio complet</h2>
+      <p>Chaque réalisation témoigne de notre engagement envers la qualité et le souci du détail. Rénovations, cuisines, salles de bain, extensions — nous donnons vie à vos projets dans tout l'Hérault.</p>
+    </div>
+
+    <div class="gallery-grid">
+      {galleryItems.map((item) => (
+        <div class="gallery-item fade-up">
+          <a href={`#lb${item.id}`} aria-label={`Agrandir la photo : ${item.caption}`}>
+            <img src={item.src} alt={item.alt} loading="lazy" />
+            <div class="gallery-item-caption">
+              <span>{item.caption}</span>
+            </div>
+          </a>
+          <a href={item.href} class="gallery-item-link" aria-label={`Voir le projet : ${item.caption}`}>Voir le projet →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Lightboxes -->
+  {galleryItems.map((item) => (
+    <div id={`lb${item.id}`} class="lightbox" role="dialog" aria-modal="true" aria-label={item.caption}>
+      <a href="#" class="lightbox-close" aria-label="Fermer">✕</a>
+      <figure class="lightbox-figure">
+        <img src={item.src.replace('w=800', 'w=1400')} alt={item.alt} />
+        <figcaption>{item.caption}</figcaption>
+      </figure>
+    </div>
+  ))}
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1600210491892-03d54741b62c?w=1920&q=90');"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <p class="label">Votre projet</p>
+      <h2>Confiez-nous votre rénovation</h2>
+      <p>Devis gratuit, accompagnement personnalisé et artisans qualifiés dans tout l'Hérault.</p>
+      <div class="cta-buttons">
+        <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

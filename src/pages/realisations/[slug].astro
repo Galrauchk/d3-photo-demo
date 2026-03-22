@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const projects = [
+    {
+      slug: 'projet-maison-montpellier',
+      title: 'Rénovation complète — Villa Montpellier',
+      city: 'Montpellier',
+      type: 'Rénovation complète',
+      budget: '85 000 €',
+      duration: '4 mois',
+      surface: '180 m²',
+      desc: "Rénovation totale d'une villa des années 80 à Montpellier. Sol, plafond, cuisine, salle de bain, électricité, plomberie. Résultat : un espace contemporain lumineux qui a doublé la valeur du bien.",
+      img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=90',
+      imgSplit: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80',
+    },
+    {
+      slug: 'cuisine-beziers',
+      title: 'Cuisine design — Appartement Béziers',
+      city: 'Béziers',
+      type: 'Cuisine sur mesure',
+      budget: '28 000 €',
+      duration: '3 semaines',
+      surface: '22 m²',
+      desc: "Cuisine ouverte sur le salon avec îlot central. Plan de travail Dekton, façades laquées blanc satiné, électroménager haut de gamme intégré. Une cuisine fonctionnelle et esthétique.",
+      img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=90',
+      imgSplit: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=900&q=80',
+    },
+    {
+      slug: 'salle-de-bain-sete',
+      title: 'Salle de bain spa — Maison Sète',
+      city: 'Sète',
+      type: 'Salle de bain',
+      budget: '18 500 €',
+      duration: '2 semaines',
+      surface: '14 m²',
+      desc: "Transformation complète avec douche à l'italienne 120x90, baignoire îlot, double vasque sur mesure et carrelage grès cérame grand format. Un espace spa à domicile.",
+      img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=90',
+      imgSplit: 'https://images.unsplash.com/photo-1571508601891-ca5e7a713859?w=900&q=80',
+    },
+    {
+      slug: 'extension-lattes',
+      title: 'Extension bois — Maison Lattes',
+      city: 'Lattes',
+      type: 'Extension',
+      budget: '45 000 €',
+      duration: '8 semaines',
+      surface: '35 m²',
+      desc: "Extension en ossature bois avec toit terrasse et baies vitrées coulissantes. Une pièce de vie lumineuse ouverte sur le jardin, réalisée en 8 semaines sans perturber la vie de famille.",
+      img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&q=90',
+      imgSplit: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80',
+    },
+    {
+      slug: 'terrasse-agde',
+      title: 'Terrasse & piscine — Villa Agde',
+      city: 'Agde',
+      type: 'Terrasse',
+      budget: '32 000 €',
+      duration: '5 semaines',
+      surface: '80 m²',
+      desc: "Création d'une terrasse carrelée sur 60m² autour d'une piscine coque 8x4m. Éclairage LED intégré, pergola bioclimatique et mobilier de jardin sur mesure.",
+      img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=90',
+      imgSplit: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=900&q=80',
+    },
+  ];
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": project.title,
+  "description": project.desc,
+  "image": project.img,
+  "locationCreated": { "@type": "Place", "name": project.city }
+};
+---
+
+<Layout
+  title={`${project.title} — Réalisation Atelier Roc Hérault`}
+  description={`${project.desc} Budget : ${project.budget}. Surface : ${project.surface}.`}
+  image={project.img}
+  schema={schema}
+>
+
+  <section class="page-hero">
+    <div class="hero-bg" style={`background-image:url('${project.img}')`}></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <span class="label" style="display:block;margin-bottom:0.75rem;">{project.type} · {project.city}</span>
+      <h1 style="font-size:clamp(2rem,4vw,3.5rem);">{project.title}</h1>
+    </div>
+  </section>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a><span>›</span>
+    <a href="/realisations">Réalisations</a><span>›</span>
+    <span>{project.title}</span>
+  </nav>
+
+  <div class="project-meta">
+    <div class="project-meta-item">
+      <span class="label">Ville</span>
+      <span>{project.city}</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="label">Type</span>
+      <span>{project.type}</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="label">Budget</span>
+      <span>{project.budget}</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="label">Durée</span>
+      <span>{project.duration}</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="label">Surface</span>
+      <span>{project.surface}</span>
+    </div>
+  </div>
+
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img src={project.imgSplit} alt={`${project.title} — réalisation Atelier Roc à ${project.city}`} loading="lazy" />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Description du projet</span>
+      <h2>{project.type} à {project.city}</h2>
+      <p>{project.desc}</p>
+      <a href="/devis" class="btn-primary">Projet similaire ? Devis gratuit</a>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-bg" style={`background-image:url('${project.img}')`}></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Un projet similaire ?</h2>
+      <p>Devis gratuit sous 48h. Atelier Roc intervient dans toute l'Hérault.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/realisations" class="btn-outline">Voir toutes nos réalisations</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

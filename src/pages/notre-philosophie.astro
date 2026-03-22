@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Notre Philosophie — Atelier Roc | Rénovation Premium Hérault",
+  "url": "https://d3-photo-demo.netlify.app/notre-philosophie"
+};
+---
+
+<Layout
+  title="Notre Philosophie — Atelier Roc | Rénovation Premium Hérault"
+  description="Découvrez la philosophie d'Atelier Roc : 15 ans d'artisanat premium, une passion pour les matériaux nobles et une équipe dédiée à sublimer chaque espace en Hérault."
+  image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=90')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span>›</span>
+        <span>Notre Philosophie</span>
+      </nav>
+      <h1>L'artisanat comme art de vivre</h1>
+      <p>Quinze années à façonner des espaces d'exception en Hérault.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT 1 — L'histoire -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=85"
+        alt="Artisan Atelier Roc posant du carrelage en pierre naturelle — savoir-faire Hérault"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">01 — Notre histoire</span>
+      <h2>Quinze ans de passion au service de votre intérieur</h2>
+      <p>Atelier Roc est né d'une conviction simple : chaque espace mérite d'être traité avec la même exigence qu'une œuvre d'art. Fondé à Montpellier, notre atelier a grandi en refusant les compromis sur la qualité. Depuis 2009, nous avons livré plus de 450 projets dans tout l'Hérault, des appartements en centre-ville aux villas face à la Méditerranée.</p>
+      <p>Notre démarche repose sur une écoute attentive, une maîtrise totale des matériaux et un suivi de chantier rigoureux du premier coup de crayon à la remise des clés.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT 2 — Nos valeurs -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=85"
+        alt="Esquisse architecturale d'un projet de rénovation intérieure — Atelier Roc Montpellier"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">02 — Nos valeurs</span>
+      <h2>Exigence, sincérité et savoir-faire transmis</h2>
+      <p>Trois mots guident chacun de nos projets. L'exigence, d'abord : nous sélectionnons nos fournisseurs avec la même rigueur qu'un chef étoilé choisit ses producteurs. La sincérité ensuite : nos devis sont transparents, nos délais respectés, notre parole tenue. Le savoir-faire enfin : nos compagnons perpétuent des gestes appris de maîtres artisans, qu'ils transmettent à leur tour aux nouvelles recrues.</p>
+      <a href="/devis" class="btn-primary">Discutons de votre projet</a>
+    </div>
+  </section>
+
+  <!-- PARALLAX — Citation fondateur -->
+  <section class="parallax-section">
+    <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=1920&q=85')"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content fade-up">
+      <span class="label" style="color:var(--cyan);display:block;margin-bottom:1rem;">Notre credo</span>
+      <h2>« Rénover, c'est révéler ce qu'un espace a toujours voulu être. »</h2>
+      <p>— Fondateur, Atelier Roc</p>
+    </div>
+  </section>
+
+  <!-- SPLIT 3 — L'équipe -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=85"
+        alt="Équipe Atelier Roc en réunion de chantier — artisans rénovation Hérault"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">03 — L'équipe</span>
+      <h2>Des artisans passionnés à votre service</h2>
+      <p>Notre équipe rassemble une vingtaine de professionnels : architectes d'intérieur, menuisiers ébénistes, carreleurs, plombiers, électriciens et peintres. Tous partagent la même culture de l'excellence. Chaque corps de métier intervient en séquence maîtrisée, sous la coordination d'un chef de projet dédié qui reste votre interlocuteur unique du début à la fin.</p>
+      <p>Nous travaillons exclusivement sur recommandation et par bouche-à-oreille — preuve que nos clients deviennent nos meilleurs ambassadeurs.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT 4 — Les matériaux -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85"
+        alt="Matériaux naturels sélectionnés pour rénovation premium — bois et pierre Atelier Roc"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">04 — Les matériaux</span>
+      <h2>Seuls les matériaux nobles entrent dans nos chantiers</h2>
+      <p>Pierre du Gard, chêne massif, béton ciré artisanal, faïences espagnoles, robinetterie italienne — nous sourcions nos matériaux auprès de fournisseurs triés sur le volet, souvent locaux, toujours durables. Cette rigueur dans le choix garantit des intérieurs qui vieillissent bien et racontent une histoire.</p>
+      <a href="/services/renovation-complete" class="btn-outline">Voir nos services</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stat-item fade-up"><div class="number">450+</div><div class="stat-label">Projets livrés</div></div>
+    <div class="stat-item fade-up"><div class="number">15</div><div class="stat-label">Ans d'expérience</div></div>
+    <div class="stat-item fade-up"><div class="number">20</div><div class="stat-label">Artisans qualifiés</div></div>
+    <div class="stat-item fade-up"><div class="number">98%</div><div class="stat-label">Clients satisfaits</div></div>
+  </div>
+
+  <!-- CONTENT SECTION — Engagements -->
+  <section class="content-section">
+    <div class="section-header">
+      <span class="label">Nos engagements</span>
+      <h2>Ce que nous vous promettons</h2>
+    </div>
+    <div class="split-section" style="padding-top:0;">
+      <div class="split-text fade-up" style="flex:1;">
+        <h3>Devis transparent en 48h</h3>
+        <p>Pas de mauvaises surprises. Chaque poste est détaillé, chaque option expliquée. Vous savez exactement ce que vous payez avant le premier coup de marteau.</p>
+      </div>
+      <div class="split-text fade-up" style="flex:1;">
+        <h3>Délais tenus, chantier propre</h3>
+        <p>Nous planifions avec soin et respectons les jalons. Votre logement reste habitable autant que possible et le chantier est nettoyé chaque soir.</p>
+      </div>
+      <div class="split-text fade-up" style="flex:1;">
+        <h3>Garantie décennale & assurance</h3>
+        <p>Tous nos travaux sont couverts par une garantie décennale. Nous sommes assurés et nos sous-traitants sélectionnés imposent les mêmes standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=85')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Prêt à écrire votre histoire avec nous ?</h2>
+      <p>Rencontrons-nous autour de votre projet. Devis gratuit sous 48h.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

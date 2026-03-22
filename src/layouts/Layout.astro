@@ -1,0 +1,146 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  schema?: object;
+  canonical?: string;
+}
+
+const { title, description, image = 'https://images.unsplash.com/photo-1560185127-6a6a1f4b3f6c?w=1200&q=80', schema, canonical } = Astro.props;
+const siteUrl = 'https://d3-photo-demo.netlify.app';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image"       content={image} />
+  <meta property="og:url"         content={canonicalUrl} />
+  <meta property="og:type"        content="website" />
+  <meta property="og:locale"      content="fr_FR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image"       content={image} />
+
+  <!-- Preload hero font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Schema.org -->
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+
+  <!-- Local Business Schema (always) -->
+  <script type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Atelier Roc",
+    "description": "Rénovation sur mesure en Hérault — cuisines, salles de bain, extensions, terrasses.",
+    "url": siteUrl,
+    "telephone": "+33612345678",
+    "email": "bonjour@atelier-roc.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montpellier",
+      "addressRegion": "Hérault",
+      "postalCode": "34000",
+      "addressCountry": "FR"
+    },
+    "areaServed": ["Montpellier","Béziers","Sète","Agde","Lunel","Hérault"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "priceRange": "€€€",
+    "image": image
+  })}</script>
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="/" onclick="closeMobile()">Accueil</a>
+    <a href="/realisations" onclick="closeMobile()">Réalisations</a>
+    <a href="/services/renovation-complete" onclick="closeMobile()">Services</a>
+    <a href="/blog" onclick="closeMobile()">Blog</a>
+    <a href="/contact" onclick="closeMobile()">Contact</a>
+    <a href="/devis" onclick="closeMobile()">Devis gratuit</a>
+  </nav>
+
+  <Header />
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer />
+
+  <script>
+    // Custom cursor
+    const dot  = document.getElementById('cursor-dot')!;
+    const ring = document.getElementById('cursor-ring')!;
+    let rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      dot.style.left  = e.clientX + 'px';
+      dot.style.top   = e.clientY + 'px';
+      rx += (e.clientX - rx) * 0.12;
+      ry += (e.clientY - ry) * 0.12;
+      ring.style.left = e.clientX + 'px';
+      ring.style.top  = e.clientY + 'px';
+    });
+
+    // Header scroll
+    const header = document.querySelector('.site-header') as HTMLElement;
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Hamburger
+    const ham = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    ham?.addEventListener('click', () => mobileNav?.classList.toggle('open'));
+
+    function closeMobile() { mobileNav?.classList.remove('open'); }
+    (window as any).closeMobile = closeMobile;
+
+    // Intersection Observer — reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.clip-reveal, .fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

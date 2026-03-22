@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Rénovation Complète Intérieure",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Atelier Roc",
+    "telephone": "+33612345678",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montpellier",
+      "addressRegion": "Hérault",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": "Hérault",
+  "url": "https://d3-photo-demo.netlify.app/services/renovation-complete"
+};
+---
+
+<Layout
+  title="Rénovation Complète Montpellier Hérault — Atelier Roc"
+  description="Rénovation intérieure complète à Montpellier et dans l'Hérault. Du sol au plafond, Atelier Roc prend en charge l'intégralité de votre projet avec une seule équipe. Devis gratuit."
+  image="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=90')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span>›</span>
+        <a href="/services/renovation-complete">Services</a>
+        <span>›</span>
+        <span>Rénovation complète</span>
+      </nav>
+      <h1>Rénovation complète</h1>
+      <p>Un espace entièrement repensé, une seule équipe de confiance.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT — Description principale -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85"
+        alt="Salon rénové avec finitions premium à Montpellier — rénovation complète Atelier Roc"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Rénovation complète</span>
+      <h2>Du sol au plafond, un espace réinventé</h2>
+      <p>La rénovation complète est notre cœur de métier. Nous prenons en charge l'intégralité du projet : démolition, gros œuvre, second œuvre, finitions et décoration. Un chef de projet unique coordonne tous les corps de métier pour que vous n'ayez qu'un seul interlocuteur.</p>
+      <p>Que vous souhaitiez moderniser un appartement haussmannien, restructurer une villa ou rénover une maison de village, nos équipes interviennent partout dans l'Hérault avec la même exigence.</p>
+      <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+    </div>
+  </section>
+
+  <!-- SPLIT reverse — Notre méthode -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&q=85"
+        alt="Chantier de rénovation intérieure en cours à Montpellier — équipe Atelier Roc"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Notre méthode</span>
+      <h2>Trois phases pour un résultat sans surprise</h2>
+      <p><strong>Phase 1 — Conception :</strong> Visite du site, relevé de côtes, proposition d'aménagement et sélection des matériaux avec notre architecte d'intérieur.</p>
+      <p><strong>Phase 2 — Chantier :</strong> Intervention séquencée des artisans, réunion de suivi hebdomadaire, chantier propre et sécurisé à chaque étape.</p>
+      <p><strong>Phase 3 — Livraison :</strong> Réception contradictoire, liste de réserves soldée sous 7 jours, remise des garanties et notice d'entretien.</p>
+      <a href="/notre-philosophie" class="btn-outline">Notre philosophie</a>
+    </div>
+  </section>
+
+  <!-- PARALLAX -->
+  <section class="parallax-section">
+    <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85')"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content fade-up">
+      <span class="label" style="color:var(--cyan);display:block;margin-bottom:1rem;">Atelier Roc</span>
+      <h2>« Un seul interlocuteur, zéro stress, un résultat d'exception. »</h2>
+      <p>Rénovation complète à Montpellier et dans tout l'Hérault.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stat-item fade-up"><div class="number">200+</div><div class="stat-label">Rénovations complètes</div></div>
+    <div class="stat-item fade-up"><div class="number">15</div><div class="stat-label">Ans d'expérience</div></div>
+    <div class="stat-item fade-up"><div class="number">48h</div><div class="stat-label">Délai de devis</div></div>
+    <div class="stat-item fade-up"><div class="number">98%</div><div class="stat-label">Clients satisfaits</div></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Votre rénovation complète commence ici</h2>
+      <p>Devis gratuit sous 48h. Nous intervenons dans toute l'Hérault.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

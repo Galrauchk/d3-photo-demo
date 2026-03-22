@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const articles = [
+    {
+      slug: 'tendances-renovation-2024',
+      title: '5 tendances rénovation à adopter en 2025',
+      category: 'Tendances',
+      img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
+      imgAlt: 'Intérieur moderne avec matériaux durables, bois et plantes vertes — tendances rénovation 2025',
+      excerpt: "Matériaux durables, biophilie, domotique... les grandes tendances qui transforment nos intérieurs.",
+      date: '12 janvier 2025',
+      content: [
+        "La rénovation intérieure en 2025 est marquée par une quête d'authenticité et de durabilité. Fini le tout-blanc aseptisé des années 2010 : les propriétaires cherchent des espaces chaleureux, vivants, connectés à la nature.",
+        "Les matériaux naturels s'imposent : bois massif, pierre naturelle, terre cuite, liège. Non seulement ils affichent une belle longévité, mais ils apportent une texture et une chaleur que les imitations ne peuvent égaler. Chez Atelier Roc, nous privilégions des matériaux sourcés localement.",
+        "La biophilie — l'art d'inviter la nature à l'intérieur — se traduit par des murs végétaux, jardinières intégrées, grandes baies vitrées. Elle améliore le bien-être et la qualité de l'air tout en créant des palettes inspirées de la forêt : verts profonds, terracottas, ocres.",
+        "La domotique devient invisible. Volets roulants programmables, éclairage adaptatif, thermostats intelligents — ces équipements s'intègrent dans la rénovation sans dénaturer l'esthétique. Les économies d'énergie réalisées permettent souvent d'amortir l'investissement en quelques années.",
+        "Atelier Roc vous accompagne dans vos projets de rénovation à Montpellier et dans tout l'Hérault. Demandez votre devis gratuit sous 48h.",
+      ],
+    },
+    {
+      slug: 'budget-renovation-cuisine',
+      title: "Quel budget prévoir pour rénover sa cuisine ?",
+      category: 'Conseils',
+      img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
+      imgAlt: 'Cuisine moderne rénovée avec îlot central et plan de travail Dekton — guide budget',
+      excerpt: "Du petit rafraîchissement à la rénovation complète, nos conseils pour budgéter votre projet cuisine.",
+      date: '5 février 2025',
+      content: [
+        "La cuisine est la pièce maîtresse du logement — et souvent la plus coûteuse à rénover. Pourtant, avec une bonne planification, il est possible d'optimiser chaque euro investi.",
+        "Pour un petit rafraîchissement (2 000 à 8 000 euros) : remplacement des façades, peinture, nouveau plan de travail. Ces interventions légères transforment visuellement la cuisine sans toucher à la structure.",
+        "Une rénovation partielle (8 000 à 20 000 euros) permet un nouveau mobilier sur mesure, remplacement de l'électroménager, nouveau carrelage, redistribution légère des circuits électriques.",
+        "La rénovation complète (20 000 à 50 000 euros) reprend totalement l'espace : démolition, nouveau plan électrique et plomberie, cuisine entièrement sur mesure, plan de travail haut de gamme, îlot central.",
+        "Atelier Roc réalise des cuisines sur mesure dans tout l'Hérault. Contactez-nous pour un devis détaillé et gratuit adapté à votre budget.",
+      ],
+    },
+    {
+      slug: 'choisir-carrelage-salle-de-bain',
+      title: "Comment choisir son carrelage de salle de bain",
+      category: 'Guide',
+      img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80',
+      imgAlt: "Salle de bain avec grand carrelage format 120x60 et douche à l'italienne — guide choix carrelage",
+      excerpt: "Grand format, mosaïque, effet bois... notre guide complet pour choisir le bon carrelage.",
+      date: '18 février 2025',
+      content: [
+        "Le carrelage représente souvent la décision la plus structurante dans la rénovation d'une salle de bain. Il conditionne l'ambiance générale, la facilité d'entretien et la durabilité de votre espace.",
+        "Les grands formats (60x60, 80x80, 120x60 cm) agrandissent visuellement l'espace et minimisent les joints. La mosaïque apporte du caractère et permet des formes courbes dans les douches.",
+        "Pour la matière : le grès cérame est le matériau de référence, imperméable et résistant. La faïence convient aux murs. La pierre naturelle est luxueuse mais demande un entretien régulier.",
+        "Pour le sol, vérifiez l'indice de glissance : minimum R10 pour une salle de bain, R11 pour l'intérieur d'une douche. La sécurité est non négociable.",
+        "Notre équipe de carreleurs professionnels vous conseille dans vos choix et réalise la pose dans les règles de l'art. Contactez Atelier Roc pour votre projet dans l'Hérault.",
+      ],
+    },
+    {
+      slug: 'extension-maison-herault',
+      title: "Extension de maison en Hérault : ce qu'il faut savoir",
+      category: 'Réglementation',
+      img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80',
+      imgAlt: "Extension ossature bois avec baies vitrées coulissantes ouverte sur jardin en Hérault",
+      excerpt: "PLU, permis de construire, déclaration préalable... tout savoir avant d'agrandir.",
+      date: '3 mars 2025',
+      content: [
+        "Agrandir sa maison en Hérault est une solution souvent plus avantageuse que de déménager. Mais avant de commencer les travaux, il est indispensable de se familiariser avec les règles d'urbanisme.",
+        "Pour une extension de moins de 20 m² (ou 40 m² en zone urbaine couverte par un PLU), une déclaration préalable de travaux suffit. Au-delà, un permis de construire est obligatoire et doit être déposé par un architecte.",
+        "Chaque commune de l'Hérault dispose de son PLU, qui fixe les règles d'emprise au sol, de hauteur maximale et de recul. Montpellier, Béziers, Sète et les communes périphériques ont des réglementations différentes.",
+        "Une extension de qualité coûte entre 1 200 et 2 500 euros par m² en Hérault selon la complexité. Certains travaux peuvent ouvrir droit à MaPrimeRénov' ou aux CEE.",
+        "Atelier Roc gère les démarches administratives de A à Z et intervient dans tout l'Hérault. Premier rendez-vous gratuit sur site.",
+      ],
+    },
+    {
+      slug: 'decoration-interieure-tendances',
+      title: "Décoration intérieure : les palettes de couleurs 2025",
+      category: 'Décoration',
+      img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80',
+      imgAlt: "Salon décoré avec palette terracotta, vert sauge et bois naturel — tendances couleurs 2025",
+      excerpt: "Terracotta, vert sauge, bleu ardoise... les couleurs qui s'imposent dans nos intérieurs.",
+      date: '20 mars 2025',
+      content: [
+        "Après des années dominées par le blanc, le gris et le beige, nos intérieurs retrouvent leur audace chromatique en 2025. Les palettes puisent dans la nature et l'architecture méditerranéenne.",
+        "Le terracotta et ses déclinaisons — de l'ocre pâle au rouge brique profond — réchauffe les espaces et s'associe parfaitement avec le bois naturel. Il évoque la Méditerranée sans tomber dans le cliché.",
+        "Le vert sauge fonctionne dans tous les types de pièces, du salon à la cuisine. Il se marie avec le blanc cassé, le lin naturel et les métaux dorés brossés.",
+        "Les bleus profonds (ardoise, canard, nuit) créent des atmosphères enveloppantes, idéales pour une chambre ou une bibliothèque. Associés à des boiseries blanches, ils habillent avec élégance.",
+        "Atelier Roc travaille avec des peintres décorateurs qualifiés pour vous accompagner dans vos choix. Du conseil colorimétrique à la réalisation, nous transformons vos envies en réalité.",
+      ],
+    },
+  ];
+
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<Layout
+  title={`${article.title} — Blog Atelier Roc`}
+  description={article.excerpt}
+  image={article.img}
+>
+
+  <section class="page-hero">
+    <div class="hero-bg" style={`background-image:url('${article.img.replace('w=800', 'w=1920')}')`}></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="label" style="display:block;margin-bottom:0.75rem;">{article.category}</span>
+      <h1 style="font-size:clamp(2rem,4vw,3.5rem);">{article.title}</h1>
+      <p style="margin-top:1rem;opacity:0.7;">{article.date}</p>
+    </div>
+  </section>
+
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a><span>›</span>
+    <a href="/blog">Blog</a><span>›</span>
+    <span>{article.title}</span>
+  </nav>
+
+  <section class="content-section fade-up" style="max-width:860px;">
+    <img src={article.img.replace('w=800', 'w=1200')} alt={article.imgAlt} style="width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:3rem;" loading="lazy" />
+    <span class="label" style="color:var(--cyan);display:block;margin-bottom:1rem;">{article.category}</span>
+    <h2 style="margin-bottom:1.5rem;">{article.title}</h2>
+    <p style="font-size:1.15rem;color:#4a5568;margin-bottom:2rem;line-height:1.8;">{article.excerpt}</p>
+    {article.content.map((p) => (
+      <p set:html={p.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} style="margin-bottom:1.5rem;color:#4a5568;line-height:1.8;" />
+    ))}
+    <div style="display:flex;gap:1rem;margin-top:3rem;flex-wrap:wrap;">
+      <a href="/blog" class="btn-outline">← Retour au blog</a>
+      <a href="/devis" class="btn-primary">Devis gratuit</a>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=90')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Votre projet mérite les meilleurs artisans</h2>
+      <p>Devis gratuit sous 48h dans tout l'Hérault.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Devis gratuit</a>
+        <a href="/realisations" class="btn-outline">Nos réalisations</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

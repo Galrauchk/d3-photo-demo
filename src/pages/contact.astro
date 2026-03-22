@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact — Atelier Roc Rénovation Hérault Montpellier"
+  description="Contactez Atelier Roc pour votre projet de rénovation dans l'Hérault. Réponse sous 24 h. Artisans qualifiés à Montpellier, Béziers, Sète et Agde."
+  image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=90"
+>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1920&q=90');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="label">Échangeons</p>
+      <h1>Parlons de votre projet</h1>
+      <p>Notre équipe vous répond sous 24 h ouvrées</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="container">
+      <a href="/">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Contact</span>
+    </div>
+  </nav>
+
+  <!-- Contact Split Section -->
+  <section class="content-section">
+    <div class="split-section">
+
+      <!-- Form -->
+      <div class="split-content form-section">
+        <p class="label">Formulaire de contact</p>
+        <h2>Décrivez votre projet</h2>
+        <p>Remplissez ce formulaire et nous vous rappelons sous 24 h ouvrées pour discuter de votre projet en détail.</p>
+
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/merci"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden" aria-hidden="true">
+            <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+          </p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+              <input type="text" id="prenom" name="prenom" required autocomplete="given-name" placeholder="Jean" />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom <span aria-hidden="true">*</span></label>
+              <input type="text" id="nom" name="nom" required autocomplete="family-name" placeholder="Dupont" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="jean.dupont@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="06 12 34 56 78" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville" autocomplete="address-level2" placeholder="Montpellier" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Votre message <span aria-hidden="true">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="6"
+              placeholder="Décrivez votre projet de rénovation : type de travaux, surface, délais souhaités..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Envoyer mon message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="split-content contact-info">
+        <p class="label">Nos coordonnées</p>
+        <h2>Atelier Roc</h2>
+        <p>Artisans rénovation dans l'Hérault depuis plus de 15 ans. Nous intervenons à Montpellier, Béziers, Sète, Agde, Lattes et dans toutes les communes du département.</p>
+
+        <ul class="contact-details" aria-label="Coordonnées">
+          <li class="contact-detail-item">
+            <span class="contact-icon" aria-hidden="true">📞</span>
+            <div>
+              <strong>Téléphone</strong>
+              <a href="tel:+33467123456">04 67 12 34 56</a>
+            </div>
+          </li>
+          <li class="contact-detail-item">
+            <span class="contact-icon" aria-hidden="true">✉</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:contact@atelierroc.fr">contact@atelierroc.fr</a>
+            </div>
+          </li>
+          <li class="contact-detail-item">
+            <span class="contact-icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>Adresse</strong>
+              <address>
+                12 rue des Artisans<br />
+                34000 Montpellier<br />
+                Hérault, France
+              </address>
+            </div>
+          </li>
+          <li class="contact-detail-item">
+            <span class="contact-icon" aria-hidden="true">🕐</span>
+            <div>
+              <strong>Horaires</strong>
+              <p>Lundi – Vendredi : 8 h – 18 h<br />Samedi : 9 h – 12 h (sur rendez-vous)</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="contact-cta">
+          <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

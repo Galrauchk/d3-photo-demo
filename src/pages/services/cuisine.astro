@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cuisine Sur Mesure",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Atelier Roc",
+    "telephone": "+33612345678",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montpellier",
+      "addressRegion": "Hérault",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": "Hérault",
+  "url": "https://d3-photo-demo.netlify.app/services/cuisine"
+};
+---
+
+<Layout
+  title="Cuisine Sur Mesure Montpellier Hérault — Atelier Roc"
+  description="Cuisine sur mesure à Montpellier et dans l'Hérault. Atelier Roc conçoit et installe votre cuisine avec des matériaux nobles, une ergonomie parfaite et une esthétique irréprochable."
+  image="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=90')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span>›</span>
+        <a href="/services/renovation-complete">Services</a>
+        <span>›</span>
+        <span>Cuisine sur mesure</span>
+      </nav>
+      <h1>Cuisine sur mesure</h1>
+      <p>L'art de cuisiner dans un espace pensé uniquement pour vous.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT — Description principale -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=1200&q=85"
+        alt="Cuisine ouverte sur mesure avec îlot central en chêne massif — Atelier Roc Montpellier"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Cuisine sur mesure</span>
+      <h2>Chaque cuisine est une œuvre unique</h2>
+      <p>Nous ne proposons pas de catalogues prêts-à-poser. Chaque cuisine Atelier Roc est dessinée sur mesure à partir de votre espace, de vos habitudes culinaires et de votre goût. Façades en chêne massif, plans de travail en marbre ou en quartz, crédences en carreaux de ciment artisanaux — chaque élément est choisi pour durer et plaire.</p>
+      <p>Notre atelier de menuiserie réalise les meubles à Montpellier, garantissant un contrôle total de la qualité et des délais de pose maîtrisés.</p>
+      <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+    </div>
+  </section>
+
+  <!-- SPLIT reverse — Nos savoir-faire -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1200&q=85"
+        alt="Détail plan de travail en marbre blanc et robinetterie dorée cuisine haut de gamme Hérault"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Nos savoir-faire</span>
+      <h2>De la conception à la livraison clés en main</h2>
+      <p>Notre équipe cuisine regroupe un architecte d'intérieur, un menuisier ébéniste, un carreleur et un plombier qui interviennent en séquence coordonnée. Nous gérons également le raccordement électrique et le capotage des gaines techniques.</p>
+      <p>Résultat : une cuisine livrée sans reprise, sans aller-retour entre corps de métier, dans un délai annoncé dès la signature du devis.</p>
+      <a href="/notre-philosophie" class="btn-outline">Notre philosophie</a>
+    </div>
+  </section>
+
+  <!-- PARALLAX -->
+  <section class="parallax-section">
+    <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=85')"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content fade-up">
+      <span class="label" style="color:var(--cyan);display:block;margin-bottom:1rem;">Atelier Roc</span>
+      <h2>« Une cuisine sur mesure, c'est un espace qui vous ressemble et vous dure vingt ans. »</h2>
+      <p>Conception et fabrication à Montpellier, pose dans tout l'Hérault.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stat-item fade-up"><div class="number">120+</div><div class="stat-label">Cuisines réalisées</div></div>
+    <div class="stat-item fade-up"><div class="number">15</div><div class="stat-label">Ans d'expérience</div></div>
+    <div class="stat-item fade-up"><div class="number">3–6</div><div class="stat-label">Semaines de pose</div></div>
+    <div class="stat-item fade-up"><div class="number">100%</div><div class="stat-label">Fabrication locale</div></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=85')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Votre cuisine de rêve prend forme ici</h2>
+      <p>Rencontrons-nous pour dessiner ensemble l'espace où vous aimerez cuisiner.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

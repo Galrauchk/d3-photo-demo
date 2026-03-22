@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Terrasse & Piscine",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Atelier Roc",
+    "telephone": "+33612345678",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montpellier",
+      "addressRegion": "Hérault",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": "Hérault",
+  "url": "https://d3-photo-demo.netlify.app/services/terrasse"
+};
+---
+
+<Layout
+  title="Terrasse & Piscine Montpellier Hérault — Atelier Roc"
+  description="Terrasse et piscine sur mesure à Montpellier et dans l'Hérault. Carrelage, bois exotique, béton désactivé, margelles — Atelier Roc crée vos espaces extérieurs de rêve."
+  image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=90')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span>›</span>
+        <a href="/services/renovation-complete">Services</a>
+        <span>›</span>
+        <span>Terrasse & piscine</span>
+      </nav>
+      <h1>Terrasse & piscine</h1>
+      <p>Vos espaces extérieurs transformés en pièces à vivre sous le soleil héraultais.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT — Description principale -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=85"
+        alt="Terrasse carrelée avec piscine à débordement et vue panoramique — Atelier Roc Hérault"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Terrasse & piscine</span>
+      <h2>L'extérieur comme une pièce supplémentaire</h2>
+      <p>Sous le soleil de l'Hérault, la terrasse est le prolongement naturel du salon. Nous créons des espaces extérieurs durables et esthétiques : carrelage grand format en grès cérame, lames de bois exotique IPE, béton désactivé teinté, ou dallage en pierre naturelle du Languedoc.</p>
+      <p>Pour les projets piscine, nous collaborons avec des piscinistes certifiés pour vous offrir un espace aquatique intégré harmonieusement dans l'aménagement paysager — margelles assorties, plage immergée, local technique invisible.</p>
+      <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+    </div>
+  </section>
+
+  <!-- SPLIT reverse — Nos réalisations extérieures -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=85"
+        alt="Aménagement paysager terrasse moderne avec pergola bois et éclairage LED — Atelier Roc"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Nos réalisations</span>
+      <h2>Du bois à la pierre, chaque matériau raconte l'Hérault</h2>
+      <p>Nous proposons aussi les pergolas bioclimatiques à lames orientables, les murets en pierre sèche, les jardinières sur-mesure et l'éclairage extérieur basse consommation encastré dans le sol ou en appliques murales. Chaque projet est pensé pour résister au mistral, aux canicules et à l'humidité méditerranéenne.</p>
+      <p>Nos équipes maîtrisent les pentes d'écoulement, les joints de dilatation et les fixations adaptées à chaque support — que ce soit une dalle béton existante, un plancher bois ou directement la terre.</p>
+      <a href="/notre-philosophie" class="btn-outline">Notre philosophie</a>
+    </div>
+  </section>
+
+  <!-- PARALLAX -->
+  <section class="parallax-section">
+    <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=85')"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content fade-up">
+      <span class="label" style="color:var(--cyan);display:block;margin-bottom:1rem;">Atelier Roc</span>
+      <h2>« En Hérault, le dehors est aussi précieux que le dedans. »</h2>
+      <p>Terrasses et piscines aménagées à Montpellier, Agde, Sète et dans toute la région.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stat-item fade-up"><div class="number">100+</div><div class="stat-label">Terrasses réalisées</div></div>
+    <div class="stat-item fade-up"><div class="number">40+</div><div class="stat-label">Projets piscine</div></div>
+    <div class="stat-item fade-up"><div class="number">4</div><div class="stat-label">Matériaux au choix</div></div>
+    <div class="stat-item fade-up"><div class="number">20 ans</div><div class="stat-label">Garantie matériaux</div></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=85')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Profitez enfin de votre extérieur</h2>
+      <p>Devis terrasse et piscine gratuit dans tout l'Hérault.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

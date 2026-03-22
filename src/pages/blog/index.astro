@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articles = [
+  {
+    slug: 'tendances-renovation-2024',
+    title: '5 tendances rénovation à adopter en 2025',
+    category: 'Tendances',
+    img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
+    imgAlt: 'Intérieur moderne avec matériaux durables et plantes — tendances rénovation 2025',
+    excerpt: "Matériaux durables, biophilie, domotique... les grandes tendances qui transforment nos intérieurs.",
+    date: '12 janvier 2025',
+  },
+  {
+    slug: 'budget-renovation-cuisine',
+    title: "Quel budget prévoir pour rénover sa cuisine ?",
+    category: 'Conseils',
+    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
+    imgAlt: 'Cuisine rénovée avec plan de travail et îlot central — guide budget rénovation cuisine',
+    excerpt: "Du petit rafraîchissement à la rénovation complète, nos conseils pour budgéter votre projet cuisine.",
+    date: '5 février 2025',
+  },
+  {
+    slug: 'choisir-carrelage-salle-de-bain',
+    title: "Comment choisir son carrelage de salle de bain",
+    category: 'Guide',
+    img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80',
+    imgAlt: 'Salle de bain avec carrelage grand format et douche italienne — guide choix carrelage',
+    excerpt: "Grand format, mosaïque, effet bois... notre guide complet pour choisir le bon carrelage.",
+    date: '18 février 2025',
+  },
+  {
+    slug: 'extension-maison-herault',
+    title: "Extension de maison en Hérault : ce qu'il faut savoir",
+    category: 'Réglementation',
+    img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80',
+    imgAlt: 'Extension ossature bois avec baies vitrées ouverte sur jardin — réglementation Hérault',
+    excerpt: "PLU, permis de construire, déclaration préalable... tout savoir avant d'agrandir.",
+    date: '3 mars 2025',
+  },
+  {
+    slug: 'decoration-interieure-tendances',
+    title: "Décoration intérieure : les palettes de couleurs 2025",
+    category: 'Décoration',
+    img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80',
+    imgAlt: 'Salon décoré avec palette de couleurs terracotta et vert sauge — tendances décoration 2025',
+    excerpt: "Terracotta, vert sauge, bleu ardoise... les couleurs qui s'imposent dans nos intérieurs.",
+    date: '20 mars 2025',
+  },
+];
+---
+
+<Layout
+  title="Blog Rénovation Hérault — Conseils & Inspirations Atelier Roc"
+  description="Conseils rénovation, guides pratiques, tendances déco et réglementation en Hérault. Le blog d'Atelier Roc, artisans rénovation à Montpellier."
+  image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=90"
+>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=90');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="label">Actualités & conseils</p>
+      <h1>Blog & conseils</h1>
+      <p>Inspirations, guides pratiques et retours d'expérience pour vos projets de rénovation</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="container">
+      <a href="/">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Blog</span>
+    </div>
+  </nav>
+
+  <!-- Blog Grid -->
+  <section class="content-section">
+    <div class="section-header fade-up">
+      <p class="label">Le blog</p>
+      <h2>Nos derniers articles</h2>
+      <p>Retrouvez conseils d'experts, tendances et guides pratiques pour réussir votre projet de rénovation dans l'Hérault.</p>
+    </div>
+
+    <div class="blog-grid">
+      {articles.map((article) => (
+        <article class="blog-card fade-up">
+          <a href={`/blog/${article.slug}`} class="blog-card-img-link" aria-label={`Lire l'article : ${article.title}`}>
+            <div class="blog-card-img">
+              <img src={article.img} alt={article.imgAlt} loading="lazy" />
+              <span class="blog-card-category">{article.category}</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <p class="blog-card-date">{article.date}</p>
+            <h2 class="blog-card-title">
+              <a href={`/blog/${article.slug}`}>{article.title}</a>
+            </h2>
+            <p class="blog-card-excerpt">{article.excerpt}</p>
+            <a href={`/blog/${article.slug}`} class="blog-card-link" aria-label={`Lire la suite : ${article.title}`}>
+              Lire l'article →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1920&q=90');"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <p class="label">Passez à l'action</p>
+      <h2>Votre projet de rénovation commence ici</h2>
+      <p>Profitez de l'expertise d'Atelier Roc pour concrétiser votre projet. Devis gratuit sous 48 h.</p>
+      <div class="cta-buttons">
+        <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+        <a href="/realisations" class="btn-outline">Voir nos réalisations</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

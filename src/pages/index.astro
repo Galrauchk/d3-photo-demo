@@ -1,17 +1,224 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Atelier Roc — Rénovation sur mesure en Hérault",
+  "url": "https://d3-photo-demo.netlify.app/"
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Atelier Roc — Rénovation sur mesure en Hérault | Montpellier"
+  description="Rénovation complète, cuisines, salles de bain, extensions et terrasses sur mesure à Montpellier et dans tout l'Hérault. Contactez Atelier Roc."
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=90')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Sublimer<br />l'espace</h1>
+      <a href="/realisations" class="btn-outline">Découvrir nos réalisations</a>
+    </div>
+    <div class="scroll-indicator"><span></span></div>
+  </section>
+
+  <!-- SPLIT 1 -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=85" alt="Rénovation intérieure complète à Montpellier — salon lumineux après travaux Atelier Roc" loading="lazy" />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">01 — Rénovation complète</span>
+      <h2>Du sol au plafond, un espace réinventé</h2>
+      <p>Nous prenons en charge l'intégralité de votre projet de rénovation. Une équipe, une vision, zéro stress.</p>
+      <a href="/services/renovation-complete" class="btn-primary">Voir le service</a>
+    </div>
+  </section>
+
+  <!-- SPLIT 2 -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=85" alt="Cuisine sur mesure design à Montpellier — réalisation Atelier Roc" loading="lazy" />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">02 — Cuisine sur mesure</span>
+      <h2>L'art de cuisiner dans un espace pensé pour vous</h2>
+      <p>Chaque cuisine est unique. Matériaux nobles, ergonomie parfaite, esthétique irréprochable.</p>
+      <a href="/services/cuisine" class="btn-primary">Voir le service</a>
+    </div>
+  </section>
+
+  <!-- PARALLAX -->
+  <section class="parallax-section">
+    <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=85')"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content fade-up">
+      <span class="label" style="color:var(--cyan);display:block;margin-bottom:1rem;">Atelier Roc</span>
+      <h2>Rénovation sur mesure en Hérault</h2>
+      <p>Plus de 15 ans d'excellence. 450 projets livrés. Un artisanat d'exception.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT 3 -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=85" alt="Salle de bain de luxe rénovée à Sète — Atelier Roc Hérault" loading="lazy" />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">03 — Salle de bain</span>
+      <h2>Un sanctuaire de bien-être</h2>
+      <p>Douche à l'italienne, baignoire îlot, carrelage grand format — votre salle de bain de rêve.</p>
+      <a href="/services/salle-de-bain" class="btn-primary">Voir le service</a>
+    </div>
+  </section>
+
+  <!-- SPLIT 4 -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=85" alt="Extension terrasse maison Hérault — agrandissement sur mesure Atelier Roc" loading="lazy" />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">04 — Extension & Terrasse</span>
+      <h2>Agrandir votre espace de vie</h2>
+      <p>Extensions en bois, béton ou verre. Terrasses carrelées ou bois. Vos dehors deviennent une pièce à vivre.</p>
+      <a href="/services/extension" class="btn-primary">Voir le service</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stat-item fade-up"><div class="number">450+</div><div class="stat-label">Projets réalisés</div></div>
+    <div class="stat-item fade-up"><div class="number">15</div><div class="stat-label">Années d'expérience</div></div>
+    <div class="stat-item fade-up"><div class="number">20</div><div class="stat-label">Communes de l'Hérault</div></div>
+    <div class="stat-item fade-up"><div class="number">98%</div><div class="stat-label">Clients satisfaits</div></div>
+  </div>
+
+  <!-- BEFORE / AFTER -->
+  <section class="ba-section">
+    <div class="section-header" style="background:var(--navy);padding-top:0;">
+      <span class="label" style="color:var(--cyan);display:block;margin-bottom:0.5rem;">Transformations réelles</span>
+      <h2 style="color:var(--white);">Avant / Après</h2>
+      <p class="ba-section-sub">Glissez le curseur pour révéler la transformation</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-item">
+        <div class="ba-label-row"><span class="label">Projet 1</span><h3>Salon Montpellier</h3></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Salon après rénovation Montpellier — Atelier Roc" loading="lazy" /></div>
+          <div class="ba-before" id="ba1-before"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Salon avant rénovation Montpellier" loading="lazy" /></div>
+          <input type="range" class="ba-range" min="0" max="100" value="50" data-before="ba1-before" data-handle="ba1-handle" />
+          <div class="ba-handle" id="ba1-handle" style="left:50%"></div>
+          <span class="ba-tag avant">Avant</span><span class="ba-tag apres">Après</span>
+        </div>
+      </div>
+      <div class="ba-item">
+        <div class="ba-label-row"><span class="label">Projet 2</span><h3>Cuisine Béziers</h3></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Cuisine après rénovation Béziers — Atelier Roc" loading="lazy" /></div>
+          <div class="ba-before" id="ba2-before"><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80" alt="Cuisine avant rénovation Béziers" loading="lazy" /></div>
+          <input type="range" class="ba-range" min="0" max="100" value="50" data-before="ba2-before" data-handle="ba2-handle" />
+          <div class="ba-handle" id="ba2-handle" style="left:50%"></div>
+          <span class="ba-tag avant">Avant</span><span class="ba-tag apres">Après</span>
+        </div>
+      </div>
+      <div class="ba-item">
+        <div class="ba-label-row"><span class="label">Projet 3</span><h3>Salle de bain Sète</h3></div>
+        <div class="ba-slider">
+          <div class="ba-after"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Salle de bain après rénovation Sète — Atelier Roc" loading="lazy" /></div>
+          <div class="ba-before" id="ba3-before"><img src="https://images.unsplash.com/photo-1571508601891-ca5e7a713859?w=800&q=80" alt="Salle de bain avant rénovation Sète" loading="lazy" /></div>
+          <input type="range" class="ba-range" min="0" max="100" value="50" data-before="ba3-before" data-handle="ba3-handle" />
+          <div class="ba-handle" id="ba3-handle" style="left:50%"></div>
+          <span class="ba-tag avant">Avant</span><span class="ba-tag apres">Après</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCROLL HORIZONTAL -->
+  <section class="hscroll-section">
+    <div class="hscroll-header">
+      <div>
+        <span class="label" style="color:var(--cyan);display:block;margin-bottom:0.5rem;">Portfolio</span>
+        <h2>Nos réalisations</h2>
+      </div>
+      <div class="hscroll-nav">
+        <button class="hscroll-btn" id="hscroll-prev" aria-label="Précédent">&#8592;</button>
+        <button class="hscroll-btn" id="hscroll-next" aria-label="Suivant">&#8594;</button>
+      </div>
+    </div>
+    <div class="hscroll-track" id="hscroll-track">
+      <div class="hscroll-card"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80" alt="Rénovation salon Montpellier — Atelier Roc" loading="lazy" /><div class="hscroll-card-info"><span class="label">Montpellier</span><h3>Rénovation complète</h3></div></div>
+      <div class="hscroll-card"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Cuisine design Béziers — Atelier Roc" loading="lazy" /><div class="hscroll-card-info"><span class="label">Béziers</span><h3>Cuisine sur mesure</h3></div></div>
+      <div class="hscroll-card"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Salle de bain luxe Sète — Atelier Roc" loading="lazy" /><div class="hscroll-card-info"><span class="label">Sète</span><h3>Salle de bain</h3></div></div>
+      <div class="hscroll-card"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80" alt="Terrasse bois Agde — Atelier Roc" loading="lazy" /><div class="hscroll-card-info"><span class="label">Agde</span><h3>Terrasse bois</h3></div></div>
+      <div class="hscroll-card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Extension maison Lattes — Atelier Roc" loading="lazy" /><div class="hscroll-card-info"><span class="label">Lattes</span><h3>Extension maison</h3></div></div>
+      <div class="hscroll-card"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80" alt="Décoration intérieure Castelnau — Atelier Roc" loading="lazy" /><div class="hscroll-card-info"><span class="label">Castelnau-le-Lez</span><h3>Décoration intérieure</h3></div></div>
+      <div class="hscroll-card"><img src="https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=800&q=80" alt="Cuisine ouverte Frontignan — Atelier Roc" loading="lazy" /><div class="hscroll-card-info"><span class="label">Frontignan</span><h3>Cuisine ouverte</h3></div></div>
+      <div class="hscroll-card"><img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&q=80" alt="Rénovation complète Lunel — Atelier Roc" loading="lazy" /><div class="hscroll-card-info"><span class="label">Lunel</span><h3>Rénovation complète</h3></div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <div class="section-header">
+    <span class="label">Nos expertises</span>
+    <h2>Des services pensés pour chaque projet</h2>
+  </div>
+  <div class="services-grid">
+    <a href="/services/renovation-complete" class="service-card"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Rénovation complète intérieure Hérault — Atelier Roc" loading="lazy" /><div class="service-card-overlay"><span class="label">Service</span><h3>Rénovation complète</h3><span class="service-link">Découvrir →</span></div></a>
+    <a href="/services/cuisine" class="service-card"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Cuisine sur mesure aménagée Montpellier — Atelier Roc" loading="lazy" /><div class="service-card-overlay"><span class="label">Service</span><h3>Cuisine sur mesure</h3><span class="service-link">Découvrir →</span></div></a>
+    <a href="/services/salle-de-bain" class="service-card"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Salle de bain moderne rénovée Hérault — Atelier Roc" loading="lazy" /><div class="service-card-overlay"><span class="label">Service</span><h3>Salle de bain</h3><span class="service-link">Découvrir →</span></div></a>
+    <a href="/services/extension" class="service-card"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="Extension maison Hérault — Atelier Roc agrandissement" loading="lazy" /><div class="service-card-overlay"><span class="label">Service</span><h3>Extension</h3><span class="service-link">Découvrir →</span></div></a>
+    <a href="/services/terrasse" class="service-card"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Terrasse aménagée Hérault — Atelier Roc" loading="lazy" /><div class="service-card-overlay"><span class="label">Service</span><h3>Terrasse & Piscine</h3><span class="service-link">Découvrir →</span></div></a>
+    <a href="/services/decoration" class="service-card"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80" alt="Décoration intérieure contemporaine Montpellier — Atelier Roc" loading="lazy" /><div class="service-card-overlay"><span class="label">Service</span><h3>Décoration intérieure</h3><span class="service-link">Découvrir →</span></div></a>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-header" style="background:#f8f8f8;padding-top:0;margin-bottom:0;">
+      <span class="label">Avis clients</span>
+      <h2>Ce qu'ils en disent</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p class="quote">« Une équipe exceptionnelle. Notre cuisine a été transformée en 3 semaines, résultat bluffant. »</p><span class="author">Sophie M. — Montpellier</span></div>
+      <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p class="quote">« Atelier Roc a réalisé notre extension. Délais tenus, finitions parfaites, on recommande sans hésiter. »</p><span class="author">Thomas & Laure D. — Lattes</span></div>
+      <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><p class="quote">« Notre salle de bain est digne d'un hôtel de luxe. Merci pour votre écoute et votre savoir-faire. »</p><span class="author">Marc R. — Sète</span></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Votre projet mérite le meilleur</h2>
+      <p>Devis gratuit sous 48h. Nous intervenons dans toute l'Hérault.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  document.querySelectorAll('.ba-range').forEach((input) => {
+    input.addEventListener('input', function(this: HTMLInputElement) {
+      const beforeId = this.dataset.before!;
+      const handleId = this.dataset.handle!;
+      const pct = parseFloat(this.value);
+      const before = document.getElementById(beforeId) as HTMLElement;
+      const handle = document.getElementById(handleId) as HTMLElement;
+      if (before) before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      if (handle) handle.style.left = pct + '%';
+    });
+  });
+
+  const track = document.getElementById('hscroll-track')!;
+  document.getElementById('hscroll-prev')?.addEventListener('click', () => track.scrollBy({ left: -430, behavior: 'smooth' }));
+  document.getElementById('hscroll-next')?.addEventListener('click', () => track.scrollBy({ left: 430, behavior: 'smooth' }));
+</script>

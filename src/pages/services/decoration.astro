@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Décoration Intérieure",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Atelier Roc",
+    "telephone": "+33612345678",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montpellier",
+      "addressRegion": "Hérault",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": "Hérault",
+  "url": "https://d3-photo-demo.netlify.app/services/decoration"
+};
+---
+
+<Layout
+  title="Décoration Intérieure Montpellier Hérault — Atelier Roc"
+  description="Décoration intérieure sur mesure à Montpellier et dans l'Hérault. Atelier Roc habille vos espaces avec des matières nobles, des couleurs sensibles et un mobilier choisi pour vous."
+  image="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1200&q=80"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1920&q=90')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span>›</span>
+        <a href="/services/renovation-complete">Services</a>
+        <span>›</span>
+        <span>Décoration intérieure</span>
+      </nav>
+      <h1>Décoration intérieure</h1>
+      <p>L'âme de votre intérieur, exprimée avec justesse et raffinement.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT — Description principale -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=85"
+        alt="Salon décoré avec mobilier sur mesure et palette de couleurs naturelles — Atelier Roc Montpellier"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Décoration intérieure</span>
+      <h2>Quand la beauté rencontre le quotidien</h2>
+      <p>La décoration intérieure est la signature d'un espace. Notre architecte d'intérieur travaille avec vous pour définir une palette de couleurs, des matières et un mobilier qui vous ressemblent. Que vous soyez sensible au style méditerranéen contemporain, au minimalisme japonais ou à l'élégance classique française, nous traduisons votre goût en espace habitable.</p>
+      <p>La prestation décoration peut être associée à une rénovation complète ou proposée en intervention ciblée sur un salon, une chambre ou un bureau.</p>
+      <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+    </div>
+  </section>
+
+  <!-- SPLIT reverse — Notre approche déco -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=85"
+        alt="Moodboard et échantillons de matières pour projet de décoration intérieure Hérault — Atelier Roc"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Notre méthode déco</span>
+      <h2>De l'inspiration au rendu en trois étapes</h2>
+      <p><strong>Étape 1 — La visite-diagnostic :</strong> Nous analysons les volumes, la lumière naturelle et votre mode de vie. Un questionnaire stylistique nous aide à cerner vos préférences.</p>
+      <p><strong>Étape 2 — La planche tendance :</strong> Nous vous présentons un book de références — matières, couleurs, mobilier, luminaires — pour validation avant tout achat.</p>
+      <p><strong>Étape 3 — La mise en œuvre :</strong> Nos équipes peignent, posent, installent et stylisent. Vous découvrez votre intérieur transformé lors d'une remise clés mémorable.</p>
+      <a href="/notre-philosophie" class="btn-outline">Notre philosophie</a>
+    </div>
+  </section>
+
+  <!-- PARALLAX -->
+  <section class="parallax-section">
+    <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1920&q=85')"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content fade-up">
+      <span class="label" style="color:var(--cyan);display:block;margin-bottom:1rem;">Atelier Roc</span>
+      <h2>« Un intérieur bien décoré, c'est un espace où l'on reste, où l'on respire, où l'on vit mieux. »</h2>
+      <p>Décoration intérieure sur mesure à Montpellier et dans toute l'Hérault.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stat-item fade-up"><div class="number">200+</div><div class="stat-label">Espaces décorés</div></div>
+    <div class="stat-item fade-up"><div class="number">15</div><div class="stat-label">Ans d'expérience</div></div>
+    <div class="stat-item fade-up"><div class="number">3</div><div class="stat-label">Univers stylistiques</div></div>
+    <div class="stat-item fade-up"><div class="number">1</div><div class="stat-label">Architecte dédié</div></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=85')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Donnez une âme à votre intérieur</h2>
+      <p>Rencontrons-nous pour définir votre style. Premier rendez-vous sans engagement.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

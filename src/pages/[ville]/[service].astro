@@ -1,0 +1,174 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const combos = [
+    { ville: 'montpellier', villeName: 'Montpellier', service: 'renovation-complete', serviceName: 'Rénovation complète', img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=90' },
+    { ville: 'montpellier', villeName: 'Montpellier', service: 'cuisine', serviceName: 'Cuisine sur mesure', img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=90' },
+    { ville: 'beziers', villeName: 'Béziers', service: 'salle-de-bain', serviceName: 'Salle de bain', img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=90' },
+    { ville: 'sete', villeName: 'Sète', service: 'extension', serviceName: 'Extension', img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&q=90' },
+    { ville: 'agde', villeName: 'Agde', service: 'terrasse', serviceName: 'Terrasse', img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=90' },
+    { ville: 'lunel', villeName: 'Lunel', service: 'decoration', serviceName: 'Décoration', img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1920&q=90' },
+    { ville: 'lattes', villeName: 'Lattes', service: 'cuisine', serviceName: 'Cuisine sur mesure', img: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=1920&q=90' },
+    { ville: 'grabels', villeName: 'Grabels', service: 'renovation-complete', serviceName: 'Rénovation complète', img: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1920&q=90' },
+    { ville: 'castelnau-le-lez', villeName: 'Castelnau-le-Lez', service: 'salle-de-bain', serviceName: 'Salle de bain', img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=90' },
+    { ville: 'vendargues', villeName: 'Vendargues', service: 'extension', serviceName: 'Extension', img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=90' },
+    { ville: 'mauguio', villeName: 'Mauguio', service: 'cuisine', serviceName: 'Cuisine sur mesure', img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=90' },
+    { ville: 'gigean', villeName: 'Gigean', service: 'terrasse', serviceName: 'Terrasse', img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&q=90' },
+    { ville: 'frontignan', villeName: 'Frontignan', service: 'renovation-complete', serviceName: 'Rénovation complète', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=90' },
+    { ville: 'palavas', villeName: 'Palavas-les-Flots', service: 'salle-de-bain', serviceName: 'Salle de bain', img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1920&q=90' },
+    { ville: 'la-grande-motte', villeName: 'La Grande-Motte', service: 'decoration', serviceName: 'Décoration intérieure', img: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=1920&q=90' },
+  ];
+
+  return combos.map((combo) => ({
+    params: { ville: combo.ville, service: combo.service },
+    props: { combo },
+  }));
+}
+
+const { combo } = Astro.props;
+
+// Service-specific copy
+const serviceDetails: Record<string, { intro: string; body: string; method: string }> = {
+  'renovation-complete': {
+    intro: 'Une rénovation clé en main, sans stress et sans mauvaise surprise.',
+    body: `Atelier Roc prend en charge l'intégralité de votre rénovation à ${combo.villeName} : démolition, gros œuvre, second œuvre, finitions et décoration. Un chef de projet dédié coordonne toutes les équipes sur place, de la première visite à la remise des clés.`,
+    method: `Chaque chantier à ${combo.villeName} débute par un relevé précis et un planning détaillé. Nos artisans locaux interviennent dans le bon ordre, le chantier reste propre à chaque étape et vous êtes informé en temps réel de l'avancement.`,
+  },
+  'cuisine': {
+    intro: "Une cuisine sur mesure qui s'adapte parfaitement à votre espace et à votre style de vie.",
+    body: `Notre équipe conçoit et réalise votre cuisine sur mesure à ${combo.villeName} : plans d'aménagement, choix des matériaux, pose des meubles, plomberie et électricité. Chaque détail est pensé pour allier esthétique et fonctionnalité au quotidien.`,
+    method: `Nous commençons par un rendez-vous chez vous à ${combo.villeName} pour comprendre vos habitudes et vos envies. Nous proposons ensuite plusieurs configurations en 3D avant de démarrer la fabrication sur mesure et la pose par nos menuisiers.`,
+  },
+  'salle-de-bain': {
+    intro: 'Une salle de bain rénovée qui allie confort, élégance et durabilité.',
+    body: `Atelier Roc transforme votre salle de bain à ${combo.villeName} en un espace bien-être sur mesure : douche à l'italienne, baignoire îlot, double vasque, carrelage grand format et robinetterie haut de gamme. Toute la plomberie et l'électricité sont reprises aux normes.`,
+    method: `Nous réalisons un plan précis de votre salle de bain à ${combo.villeName} et vous soumettons une sélection de matériaux et de mobilier adaptés à votre budget. Le chantier est protégé et planifié pour minimiser les nuisances dans votre logement.`,
+  },
+  'extension': {
+    intro: 'Agrandissez votre maison sans déménager grâce à une extension sur mesure.',
+    body: `Besoin de plus d'espace à ${combo.villeName} ? Atelier Roc conçoit et réalise votre extension : véranda, pièce supplémentaire, garage transformé ou surélévation. Nous gérons les démarches administratives (permis de construire, déclaration préalable) et coordonnons tous les corps de métier.`,
+    method: `Notre architecte partenaire étudie la faisabilité de votre extension à ${combo.villeName} et propose des plans conformes aux règles d'urbanisme locales. Après validation, nos équipes réalisent les fondations, la structure, l'isolation et les finitions dans les délais convenus.`,
+  },
+  'terrasse': {
+    intro: "Une terrasse qui prolonge harmonieusement votre intérieur vers l'extérieur.",
+    body: `Atelier Roc crée ou rénove votre terrasse à ${combo.villeName} : carrelage extérieur antidérapant, bois exotique ou composite, dalles sur plots, pergola ou toiture. Nous assurons également l'étanchéité, l'évacuation des eaux pluviales et l'éclairage intégré.`,
+    method: `Après une visite de votre extérieur à ${combo.villeName}, nous vous soumettons des plans et des échantillons de matériaux adaptés au climat héraultais. La pose est réalisée par nos spécialistes en travaux extérieurs, dans le respect de votre jardin et de vos voisins.`,
+  },
+  'decoration': {
+    intro: 'Un intérieur harmonieux pensé dans les moindres détails par notre équipe de décorateurs.',
+    body: `Notre équipe de décoration intervient à ${combo.villeName} pour transformer votre intérieur : choix des couleurs, mobilier sur mesure, éclairage d'ambiance, textiles et accessoires. Nous créons une atmosphère cohérente qui reflète votre personnalité tout en valorisant votre bien.`,
+    method: `Nous réalisons un moodboard de votre futur intérieur à ${combo.villeName} avant de passer commande. Livraison et installation incluses : vous n'avez qu'à profiter du résultat le jour J, sans vous soucier de la logistique.`,
+  },
+};
+
+const detail = serviceDetails[combo.service] ?? {
+  intro: `Un projet de ${combo.serviceName} réalisé avec soin à ${combo.villeName}.`,
+  body: `Atelier Roc intervient à ${combo.villeName} pour votre projet de ${combo.serviceName}. Notre équipe apporte son savoir-faire héraultais et son exigence de finition à chaque chantier.`,
+  method: `Devis gratuit, planning précis et suivi personnalisé : Atelier Roc prend en charge votre projet de ${combo.serviceName} à ${combo.villeName} de A à Z.`,
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${combo.serviceName} à ${combo.villeName}`,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Atelier Roc",
+    "telephone": "+33612345678",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": combo.villeName,
+      "addressRegion": "Hérault",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": combo.villeName,
+  "url": `https://d3-photo-demo.netlify.app/${combo.ville}/${combo.service}`
+};
+---
+
+<Layout
+  title={`${combo.serviceName} à ${combo.villeName} — Atelier Roc Hérault`}
+  description={`Atelier Roc réalise votre projet de ${combo.serviceName} à ${combo.villeName}. Devis gratuit, intervention rapide en Hérault.`}
+  image={combo.img}
+  schema={schema}
+>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style={`background-image:url('${combo.img}')`}></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <h1>{combo.serviceName} à {combo.villeName}</h1>
+      <p>{detail.intro}</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a>
+    <span>›</span>
+    <a href={`/villes/${combo.ville}`}>{combo.villeName}</a>
+    <span>›</span>
+    <span>{combo.serviceName}</span>
+  </nav>
+
+  <!-- SPLIT SECTION — image left, text right -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src={combo.img}
+        alt={`${combo.serviceName} réalisé à ${combo.villeName} par Atelier Roc — vue du chantier terminé`}
+        loading="lazy"
+        width="960"
+        height="700"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">{combo.serviceName} — {combo.villeName}</span>
+      <h2>{combo.serviceName} à {combo.villeName} par Atelier Roc</h2>
+      <p>{detail.body}</p>
+      <p>{detail.method}</p>
+      <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band">
+    <div class="stat-item fade-up">
+      <div class="number">200+</div>
+      <div class="stat-label">Projets réalisés en Hérault</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="number">15</div>
+      <div class="stat-label">Ans d'expérience</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="number">48h</div>
+      <div class="stat-label">Délai de devis</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="number">98%</div>
+      <div class="stat-label">Clients satisfaits</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style={`background-image:url('${combo.img}')`}></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Lancez votre projet de {combo.serviceName} à {combo.villeName}</h2>
+      <p>
+        Devis gratuit sous 48 h. Atelier Roc intervient à {combo.villeName} et dans tout
+        l'Hérault avec une équipe dédiée et un seul interlocuteur du début à la fin.
+      </p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,261 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const villes = [
+    { slug: 'montpellier', name: 'Montpellier', dept: '34000', pop: '290 000', desc: "Capitale de l'Hérault, Montpellier est notre terrain de jeu principal. Appartements, villas, maisons de ville : nous intervenons partout.", img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=90' },
+    { slug: 'beziers', name: 'Béziers', dept: '34500', pop: '77 000', desc: "Deuxième ville de l'Hérault, Béziers et ses alentours font l'objet de nombreuses rénovations de maisons de caractère.", img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=90' },
+    { slug: 'sete', name: 'Sète', dept: '34200', pop: '43 000', desc: 'La Venise du Languedoc mérite des rénovations à la hauteur de son caractère. Atelier Roc intervient sur Sète et son port.', img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=90' },
+    { slug: 'agde', name: 'Agde', dept: '34300', pop: '26 000', desc: "Cap d'Agde, Agde historique — nous rénovons villas et appartements sur toute la commune agathoise.", img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&q=90' },
+    { slug: 'lunel', name: 'Lunel', dept: '34400', pop: '26 000', desc: 'Lunel et sa région profitent de notre expertise pour des rénovations complètes et des travaux sur mesure.', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=90' },
+    { slug: 'palavas', name: 'Palavas-les-Flots', dept: '34250', pop: '6 500', desc: 'Station balnéaire prisée, Palavas accueille de nombreuses résidences secondaires que nous rénovons avec soin.', img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1920&q=90' },
+    { slug: 'la-grande-motte', name: 'La Grande-Motte', dept: '34280', pop: '9 000', desc: 'Cité du soleil, La Grande-Motte nous confie la rénovation de ses appartements et villas en bord de mer.', img: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=1920&q=90' },
+    { slug: 'frontignan', name: 'Frontignan', dept: '34110', pop: '24 000', desc: 'Frontignan et sa lagune : nous intervenons sur maisons de ville, villas et appartements pour tous types de rénovations.', img: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1920&q=90' },
+    { slug: 'poussan', name: 'Poussan', dept: '34560', pop: '6 000', desc: 'Village entre Sète et Montpellier, Poussan bénéficie de notre proximité pour des interventions rapides et soignées.', img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=90' },
+    { slug: 'mireval', name: 'Mireval', dept: '34110', pop: '4 000', desc: 'Village viticole de l\'Hérault, Mireval nous confie la rénovation de ses mas et maisons de caractère.', img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=90' },
+    { slug: 'lattes', name: 'Lattes', dept: '34970', pop: '17 000', desc: 'Commune dynamique au sud de Montpellier, Lattes est l\'une de nos zones d\'intervention privilégiées.', img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=90' },
+    { slug: 'grabels', name: 'Grabels', dept: '34790', pop: '8 000', desc: 'À deux pas de Montpellier, Grabels fait régulièrement appel à notre expertise pour des rénovations haut de gamme.', img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&q=90' },
+    { slug: 'castelnau-le-lez', name: 'Castelnau-le-Lez', dept: '34170', pop: '22 000', desc: 'Ville résidentielle prisée, Castelnau-le-Lez accueille de nombreux projets de rénovation signés Atelier Roc.', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=90' },
+    { slug: 'vendargues', name: 'Vendargues', dept: '34740', pop: '6 500', desc: "Commune de l'Est héraultais, Vendargues nous fait confiance pour ses projets de rénovation et d'extension.", img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1920&q=90' },
+    { slug: 'mauguio', name: 'Mauguio', dept: '34130', pop: '18 000', desc: 'Entre mer et garrigue, Mauguio et son territoire bénéficient de notre savoir-faire en rénovation premium.', img: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=1920&q=90' },
+    { slug: 'gigean', name: 'Gigean', dept: '34770', pop: '7 000', desc: "Village de l'étang de Thau, Gigean compte parmi nos zones d'intervention pour travaux de rénovation.", img: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1920&q=90' },
+    { slug: 'montbazin', name: 'Montbazin', dept: '34560', pop: '3 500', desc: 'Village héraultais au cadre de vie préservé, Montbazin nous sollicite pour ses projets de rénovation.', img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1920&q=90' },
+    { slug: 'vic-la-gardiole', name: 'Vic-la-Gardiole', dept: '34110', pop: '4 500', desc: 'Entre Sète et Montpellier, Vic-la-Gardiole bénéficie de notre expertise pour tous types de travaux.', img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=90' },
+    { slug: 'fabreques', name: 'Fabrègues', dept: '34690', pop: '7 500', desc: "Commune résidentielle de l'Hérault, Fabrègues nous confie ses projets de rénovation intérieure et extérieure.", img: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=90' },
+    { slug: 'pignan', name: 'Pignan', dept: '34570', pop: '5 500', desc: 'Village à l\'ouest de Montpellier, Pignan bénéficie de notre proximité pour des chantiers de rénovation sur mesure.', img: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1920&q=90' },
+  ];
+
+  return villes.map((ville) => ({
+    params: { ville: ville.slug },
+    props: { ville },
+  }));
+}
+
+const { ville } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Atelier Roc",
+  "description": `Rénovation sur mesure à ${ville.name} — cuisines, salles de bain, extensions, terrasses.`,
+  "url": `https://d3-photo-demo.netlify.app/villes/${ville.slug}`,
+  "telephone": "+33612345678",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": ville.name,
+    "addressRegion": "Hérault",
+    "postalCode": ville.dept,
+    "addressCountry": "FR"
+  },
+  "areaServed": ville.name,
+};
+---
+
+<Layout
+  title={`Rénovation ${ville.name} (${ville.dept}) — Atelier Roc Hérault`}
+  description={`Atelier Roc réalise vos projets de rénovation à ${ville.name} : cuisine, salle de bain, extension, terrasse. Devis gratuit.`}
+  image={ville.img}
+  schema={schema}
+>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style={`background-image:url('${ville.img}')`}></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <h1>Rénovation à {ville.name}</h1>
+      <p>{ville.desc}</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a>
+    <span>›</span>
+    <a href="/villes">Zones d'intervention</a>
+    <span>›</span>
+    <span>{ville.name}</span>
+  </nav>
+
+  <!-- SPLIT SECTION — Présentation ville -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src={ville.img}
+        alt={`Vue de ${ville.name} (${ville.dept}) — zone d'intervention Atelier Roc en Hérault`}
+        loading="lazy"
+        width="960"
+        height="700"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Atelier Roc à {ville.name}</span>
+      <h2>Votre artisan rénovateur à {ville.name}</h2>
+      <p>{ville.desc}</p>
+      <p>
+        Depuis Montpellier, notre équipe se déplace à {ville.name} ({ville.dept}) pour tous vos
+        projets : rénovation complète, cuisine sur mesure, salle de bain, extension ou terrasse.
+        Nous apportons le même niveau d'exigence et de finition quelle que soit l'ampleur du chantier.
+      </p>
+      <p>
+        Devis gratuit et sans engagement sous 48 h. Un interlocuteur unique suit votre chantier
+        de la conception à la livraison.
+      </p>
+      <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+    </div>
+  </section>
+
+  <!-- SERVICES LINKS GRID -->
+  <section style="padding: 5rem 3rem; background: #f8f8f8;">
+    <div class="section-header" style="padding-top:0;">
+      <span class="label">Nos prestations</span>
+      <h2>Nos services à {ville.name}</h2>
+    </div>
+    <div class="services-grid" style="margin-top: 2rem;">
+
+      <article class="service-card">
+        <img
+          src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+          alt={`Rénovation complète d'un intérieur à ${ville.name} — Atelier Roc`}
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+        <div class="service-card-overlay">
+          <span class="label">Tout inclus</span>
+          <h3>Rénovation complète</h3>
+          <a href={`/${ville.slug}/renovation-complete`} class="service-link">
+            Découvrir <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <img
+          src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
+          alt={`Cuisine sur mesure rénovée à ${ville.name} par Atelier Roc`}
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+        <div class="service-card-overlay">
+          <span class="label">Aménagement</span>
+          <h3>Cuisine sur mesure</h3>
+          <a href={`/${ville.slug}/cuisine`} class="service-link">
+            Découvrir <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <img
+          src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"
+          alt={`Salle de bain moderne rénovée à ${ville.name} — Atelier Roc Hérault`}
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+        <div class="service-card-overlay">
+          <span class="label">Bien-être</span>
+          <h3>Salle de bain</h3>
+          <a href={`/${ville.slug}/salle-de-bain`} class="service-link">
+            Découvrir <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <img
+          src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80"
+          alt={`Extension de maison réalisée à ${ville.name} par Atelier Roc`}
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+        <div class="service-card-overlay">
+          <span class="label">Agrandissement</span>
+          <h3>Extension</h3>
+          <a href={`/${ville.slug}/extension`} class="service-link">
+            Découvrir <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+          alt={`Terrasse aménagée et rénovée à ${ville.name} — Atelier Roc`}
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+        <div class="service-card-overlay">
+          <span class="label">Extérieur</span>
+          <h3>Terrasse</h3>
+          <a href={`/${ville.slug}/terrasse`} class="service-link">
+            Découvrir <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <img
+          src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80"
+          alt={`Décoration intérieure soignée dans une propriété à ${ville.name} — Atelier Roc`}
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+        <div class="service-card-overlay">
+          <span class="label">Design</span>
+          <h3>Décoration intérieure</h3>
+          <a href={`/${ville.slug}/decoration`} class="service-link">
+            Découvrir <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band">
+    <div class="stat-item fade-up">
+      <div class="number">50+</div>
+      <div class="stat-label">Chantiers à {ville.name}</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="number">15</div>
+      <div class="stat-label">Ans d'expérience</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="number">48h</div>
+      <div class="stat-label">Délai de devis</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="number">98%</div>
+      <div class="stat-label">Clients satisfaits</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div
+      class="cta-bg"
+      style={`background-image:url('${ville.img}')`}
+    ></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Votre projet à {ville.name} commence ici</h2>
+      <p>
+        Devis gratuit sous 48 h. Atelier Roc intervient à {ville.name} ({ville.dept}) et dans
+        tout l'Hérault avec la même équipe dédiée.
+      </p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

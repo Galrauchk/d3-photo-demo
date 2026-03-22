@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Devis Gratuit Rénovation — Atelier Roc Hérault"
+  description="Demandez votre devis gratuit pour votre projet de rénovation dans l'Hérault. Réponse sous 48 h. Atelier Roc, artisans qualifiés à Montpellier et dans tout l'Hérault."
+  image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=90"
+>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600210491892-03d54741b62c?w=1920&q=90');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="label">Gratuit & sans engagement</p>
+      <h1>Demander un devis gratuit</h1>
+      <p>Réponse personnalisée sous 48 h ouvrées — artisans qualifiés dans tout l'Hérault</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="container">
+      <a href="/">Accueil</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Devis gratuit</span>
+    </div>
+  </nav>
+
+  <!-- Devis Form -->
+  <section class="content-section form-section">
+    <div class="section-header fade-up">
+      <p class="label">Devis personnalisé</p>
+      <h2>Décrivez votre projet en détail</h2>
+      <p>Plus votre description est précise, plus notre devis sera adapté à vos besoins et à votre budget. Toutes les informations restent confidentielles.</p>
+    </div>
+
+    <form
+      name="devis"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/merci"
+      class="devis-form fade-up"
+      novalidate
+    >
+      <input type="hidden" name="form-name" value="devis" />
+      <p class="hidden" aria-hidden="true">
+        <label>Ne pas remplir : <input name="bot-field" /></label>
+      </p>
+
+      <!-- Identité -->
+      <fieldset>
+        <legend>Vos coordonnées</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+            <input type="text" id="prenom" name="prenom" required autocomplete="given-name" placeholder="Jean" />
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom <span aria-hidden="true">*</span></label>
+            <input type="text" id="nom" name="nom" required autocomplete="family-name" placeholder="Dupont" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="jean.dupont@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone <span aria-hidden="true">*</span></label>
+            <input type="tel" id="telephone" name="telephone" required autocomplete="tel" placeholder="06 12 34 56 78" />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Chantier -->
+      <fieldset>
+        <legend>Localisation du chantier</legend>
+        <div class="form-group">
+          <label for="adresse-chantier">Adresse du chantier</label>
+          <input type="text" id="adresse-chantier" name="adresse_chantier" autocomplete="street-address" placeholder="12 rue des Mimosas" />
+        </div>
+
+        <div class="form-group">
+          <label for="ville-chantier">Ville <span aria-hidden="true">*</span></label>
+          <input type="text" id="ville-chantier" name="ville_chantier" required autocomplete="address-level2" placeholder="Montpellier" />
+        </div>
+      </fieldset>
+
+      <!-- Projet -->
+      <fieldset>
+        <legend>Votre projet</legend>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="type-projet">Type de projet <span aria-hidden="true">*</span></label>
+            <select id="type-projet" name="type_projet" required>
+              <option value="" disabled selected>Sélectionnez un type</option>
+              <option value="renovation-complete">Rénovation complète</option>
+              <option value="cuisine">Cuisine</option>
+              <option value="salle-de-bain">Salle de bain</option>
+              <option value="extension">Extension</option>
+              <option value="terrasse">Terrasse</option>
+              <option value="decoration">Décoration intérieure</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="surface">Surface approximative (m²)</label>
+            <input type="text" id="surface" name="surface" placeholder="Ex. : 25 m²" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Budget indicatif <span aria-hidden="true">*</span></label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Sélectionnez une fourchette</option>
+            <option value="moins-10k">Moins de 10 000 €</option>
+            <option value="10-25k">10 000 – 25 000 €</option>
+            <option value="25-50k">25 000 – 50 000 €</option>
+            <option value="50-100k">50 000 – 100 000 €</option>
+            <option value="plus-100k">Plus de 100 000 €</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description du projet <span aria-hidden="true">*</span></label>
+          <textarea
+            id="description"
+            name="description"
+            required
+            rows="8"
+            placeholder="Décrivez votre projet en détail : travaux envisagés, état actuel du logement, contraintes particulières, délais souhaités, exigences de matériaux ou de finitions..."
+          ></textarea>
+        </div>
+      </fieldset>
+
+      <div class="form-submit">
+        <p class="form-legal">En soumettant ce formulaire, vous acceptez que vos données soient traitées par Atelier Roc dans le cadre de votre demande de devis, conformément à notre <a href="/mentions-legales">politique de confidentialité</a>.</p>
+        <button type="submit" class="btn-primary">Envoyer ma demande de devis</button>
+      </div>
+    </form>
+
+    <!-- Reassurance -->
+    <div class="reassurance-grid fade-up">
+      <div class="reassurance-item">
+        <span class="reassurance-icon" aria-hidden="true">✓</span>
+        <strong>100 % gratuit</strong>
+        <p>Notre devis est établi gratuitement et sans engagement de votre part.</p>
+      </div>
+      <div class="reassurance-item">
+        <span class="reassurance-icon" aria-hidden="true">⏱</span>
+        <strong>Réponse sous 48 h</strong>
+        <p>Nous vous contactons dans les 48 heures ouvrées pour affiner votre projet.</p>
+      </div>
+      <div class="reassurance-item">
+        <span class="reassurance-icon" aria-hidden="true">🔒</span>
+        <strong>Données confidentielles</strong>
+        <p>Vos informations restent strictement confidentielles et ne sont pas transmises à des tiers.</p>
+      </div>
+    </div>
+  </section>
+
+</Layout>

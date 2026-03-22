@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Rénovation Salle de Bain",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Atelier Roc",
+    "telephone": "+33612345678",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montpellier",
+      "addressRegion": "Hérault",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": "Hérault",
+  "url": "https://d3-photo-demo.netlify.app/services/salle-de-bain"
+};
+---
+
+<Layout
+  title="Salle de Bain Montpellier Hérault — Atelier Roc"
+  description="Rénovation de salle de bain haut de gamme à Montpellier et dans l'Hérault. Douche à l'italienne, baignoire îlot, carrelage grand format — Atelier Roc crée votre sanctuaire de bien-être."
+  image="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=80"
+  schema={schema}
+>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=90')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <nav class="breadcrumb">
+        <a href="/">Accueil</a>
+        <span>›</span>
+        <a href="/services/renovation-complete">Services</a>
+        <span>›</span>
+        <span>Salle de bain</span>
+      </nav>
+      <h1>Salle de bain</h1>
+      <p>Un sanctuaire de bien-être taillé à votre image.</p>
+    </div>
+  </section>
+
+  <!-- SPLIT — Description principale -->
+  <section class="split-section">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1571508601891-ca5e7a713859?w=1200&q=85"
+        alt="Salle de bain rénovée avec douche à l'italienne et carrelage grand format — Atelier Roc Hérault"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Salle de bain</span>
+      <h2>Un espace bien-être digne d'un palace</h2>
+      <p>La salle de bain est l'espace le plus intime de la maison. Nous y apportons un soin particulier : acoustique traitée, luminosité maîtrisée, matériaux imperméables aux finitions luxueuses. Douche à l'italienne avec receveur extra-plat, baignoire îlot en fonte, vasque en béton ciré ou en marbre — vos envies sont notre terrain de jeu.</p>
+      <p>Chaque salle de bain Atelier Roc est étanche de A à Z, avec une évacuation dimensionnée et une ventilation silencieuse conforme aux normes DTU 60.1.</p>
+      <a href="/devis" class="btn-primary">Demander un devis gratuit</a>
+    </div>
+  </section>
+
+  <!-- SPLIT reverse — Les finitions -->
+  <section class="split-section reverse">
+    <div class="split-image clip-reveal">
+      <img
+        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=85"
+        alt="Détail robinetterie dorée et vasque en marbre salle de bain haut de gamme Montpellier"
+        loading="lazy"
+      />
+    </div>
+    <div class="split-text fade-up">
+      <span class="label">Finitions & matériaux</span>
+      <h2>Des matériaux qui subliment chaque moment</h2>
+      <p>Nous travaillons avec des marques reconnues — Grohe, Hansgrohe, Porcelanosa, Villeroy & Boch — mais aussi avec des artisans locaux pour les pièces uniques comme les vasques en terre cuite ou les miroirs sur-mesure encadrés de bois flotté méditerranéen.</p>
+      <p>Éclairage LED encastré à température de couleur variable, niche en carrelage, plancher chauffant à eau — chaque détail est pensé pour le confort au quotidien.</p>
+      <a href="/notre-philosophie" class="btn-outline">Notre approche artisanale</a>
+    </div>
+  </section>
+
+  <!-- PARALLAX -->
+  <section class="parallax-section">
+    <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=85')"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content fade-up">
+      <span class="label" style="color:var(--cyan);display:block;margin-bottom:1rem;">Atelier Roc</span>
+      <h2>« Votre salle de bain doit être le premier luxe de votre journée. »</h2>
+      <p>Rénovation de salle de bain haut de gamme à Montpellier et dans l'Hérault.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stat-item fade-up"><div class="number">150+</div><div class="stat-label">Salles de bain rénovées</div></div>
+    <div class="stat-item fade-up"><div class="number">10 ans</div><div class="stat-label">Garantie étanchéité</div></div>
+    <div class="stat-item fade-up"><div class="number">2–4</div><div class="stat-label">Semaines de chantier</div></div>
+    <div class="stat-item fade-up"><div class="number">100%</div><div class="stat-label">Conformes DTU</div></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920&q=85')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade-up">
+      <h2>Offrez-vous la salle de bain dont vous rêvez</h2>
+      <p>Devis gratuit et visite à domicile dans tout l'Hérault.</p>
+      <div class="btn-group">
+        <a href="/devis" class="btn-primary">Demander un devis</a>
+        <a href="/contact" class="btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
