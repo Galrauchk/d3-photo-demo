@@ -3,9 +3,18 @@ import Layout from '../layouts/Layout.astro';
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Atelier Roc — Rénovation sur mesure en Hérault",
-  "url": "https://d3-photo-demo.netlify.app/"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Atelier Roc",
+      "url": "https://d3-photo-demo.netlify.app/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Atelier Roc — Rénovation sur mesure en Hérault",
+      "url": "https://d3-photo-demo.netlify.app/"
+    }
+  ]
 };
 ---
 
