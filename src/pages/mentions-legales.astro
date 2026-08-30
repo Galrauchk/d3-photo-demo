@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import LegalLinks from '../components/LegalLinks.astro';
 ---
 
 <Layout
@@ -39,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
       Code APE : 4329A — Autres travaux d'installation<br />
       TVA intracommunautaire : FR 12 123456789<br /><br />
       Téléphone : <a href="tel:+33467123456">04 67 12 34 56</a><br />
-      Email : <a href="mailto:contact@atelierroc.fr">contact@atelierroc.fr</a>
+      Email : <a href="/contact">contact@atelierroc.fr</a>
     </address>
     <p><strong>Directeur de la publication :</strong> M. Pierre Rochet, gérant.</p>
 
@@ -66,7 +67,7 @@ import Layout from '../layouts/Layout.astro';
     <p><strong>Données collectées :</strong> Le site collecte des données personnelles via les formulaires de contact et de demande de devis (nom, prénom, adresse email, numéro de téléphone, ville, description du projet). Ces données sont utilisées exclusivement pour répondre à vos demandes et établir des devis.</p>
     <p><strong>Durée de conservation :</strong> Vos données sont conservées pour une durée maximale de 3 ans à compter de votre dernier contact avec Atelier Roc.</p>
     <p><strong>Responsable du traitement :</strong> Atelier Roc, 12 rue des Artisans, 34000 Montpellier.</p>
-    <p>Pour exercer vos droits ou pour toute question relative à la protection de vos données, vous pouvez contacter Atelier Roc à l'adresse suivante : <a href="mailto:contact@atelierroc.fr">contact@atelierroc.fr</a>. En cas de réclamation, vous avez le droit de saisir la Commission Nationale de l'Informatique et des Libertés (CNIL) — <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.</p>
+    <p>Pour exercer vos droits ou pour toute question relative à la protection de vos données, vous pouvez contacter Atelier Roc à l'adresse suivante : <a href="/contact">contact@atelierroc.fr</a>. En cas de réclamation, vous avez le droit de saisir la Commission Nationale de l'Informatique et des Libertés (CNIL) - <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.</p>
 
     <h2>6. Cookies</h2>
     <p>Ce site utilise des cookies techniques nécessaires à son bon fonctionnement. Ces cookies ne collectent pas de données personnelles à des fins publicitaires ou de suivi comportemental.</p>
@@ -77,6 +78,7 @@ import Layout from '../layouts/Layout.astro';
     <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux du ressort de la Cour d'appel de Montpellier seront seuls compétents.</p>
 
     <p class="legal-update"><em>Dernière mise à jour : mars 2025</em></p>
+    <LegalLinks includeMentions={false} />
 
   </section>
 

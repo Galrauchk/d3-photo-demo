@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LegalPage from '../components/LegalPage.astro';
+
+
+const kind = 'cookies' as const;
+---
+
+<Layout title="Politique de cookies : [NOM DE L'ENTREPRISE]" description="Cookies, consentement, outils de mesure d'audience et gestion des préférences.">
+  <LegalPage kind={kind} />
+</Layout>
+
