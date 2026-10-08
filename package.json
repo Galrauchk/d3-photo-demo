@@ -31,6 +31,6 @@
     "wrangler": "4.143.0"
   },
   "cloudflare": {
-    "domaine": "d3-photo-demo.netlify.app"
+    "domaine": "demo-photo.webtrafic.fr"
   }
 }
