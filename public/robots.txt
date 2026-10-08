@@ -21,8 +21,8 @@ User-agent: DuckAssistBot
 User-agent: Amazonbot
 Allow: /
 
-Sitemap: https://d3-photo-demo.netlify.app/sitemap-index.xml
+Sitemap: https://demo-photo.webtrafic.fr/sitemap-index.xml
 
 # Index pour les agents IA / LLM (llmstxt.org)
-# https://d3-photo-demo.netlify.app/llms.txt - index
-# https://d3-photo-demo.netlify.app/llms-full.txt - contenu intégral
+# https://demo-photo.webtrafic.fr/llms.txt - index
+# https://demo-photo.webtrafic.fr/llms-full.txt - contenu intégral
