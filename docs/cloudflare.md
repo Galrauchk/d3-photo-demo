@@ -38,3 +38,11 @@ Les workflows transmettent aussi les variables publiques lues par le frontend :
 `PUBLIC_GTM_ID`.
 Comparer leurs valeurs à celles du site Netlify avant toute activation ; aucun secret métier
 ne doit être exposé au build public. Les valeurs restent à renseigner dans GitHub.
+
+## Formulaires de démonstration
+
+Le HTML existant porte des marqueurs `data-netlify="true"`. La lecture de l'API Netlify
+le 08/10 retourne zéro formulaire enregistré et `processing_settings.ignore_html_forms=true`. Il n'existe donc pas de service
+de réception actif à porter dans ce dépôt. Le contenu est conservé et aucun nouveau
+traitement de données n'est activé. Ces formulaires restent des interfaces de démonstration ;
+leur utilisation pour recevoir de vraies demandes exige un backend explicite avant ouverture.
