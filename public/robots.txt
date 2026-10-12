@@ -1,28 +1,2 @@
 User-agent: *
-Allow: /
-
-# Assistants IA / LLM - explicitement autorisés
-User-agent: GPTBot
-User-agent: ChatGPT-User
-User-agent: OAI-SearchBot
-User-agent: ClaudeBot
-User-agent: Claude-User
-User-agent: Claude-SearchBot
-User-agent: PerplexityBot
-User-agent: Perplexity-User
-User-agent: Google-Extended
-User-agent: Applebot-Extended
-User-agent: CCBot
-User-agent: Bingbot
-User-agent: meta-externalagent
-User-agent: Meta-ExternalFetcher
-User-agent: MistralAI-User
-User-agent: DuckAssistBot
-User-agent: Amazonbot
-Allow: /
-
-Sitemap: https://demo-photo.webtrafic.fr/sitemap-index.xml
-
-# Index pour les agents IA / LLM (llmstxt.org)
-# https://demo-photo.webtrafic.fr/llms.txt - index
-# https://demo-photo.webtrafic.fr/llms-full.txt - contenu intégral
+Disallow: /

@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "cf:assets": "node scripts/cloudflare-assets.mjs",
-    "test:cloudflare": "node --test tests/cloudflare-assets.test.mjs tests/worker-canonique.test.mjs tests/worker-env.test.mjs",
+    "test": "npm run test:cloudflare",
+    "test:cloudflare": "node --test tests/cloudflare-assets.test.mjs tests/worker-canonique.test.mjs tests/worker-env.test.mjs tests/noindex-demo.test.mjs",
     "cf:check": "npm run cf:assets && npm run test:cloudflare && wrangler deploy --dry-run",
     "cf:dev": "npm run cf:assets && wrangler dev --local"
   },
